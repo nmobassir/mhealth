@@ -1,0 +1,11 @@
+function node(title, parent, childrenList){
+	this.name = title;
+	this.parentNode = parent;
+	this.childrenNodes = childrenList;
+	this.addEventListener("click", makeCenterNode);
+}
+function makeCenterNode(){
+	var p = n.getParentNode();
+	p.parentNode = n;
+	draw graph;
+}

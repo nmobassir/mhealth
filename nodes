@@ -1,11 +1,20 @@
 function node(title, parent, childrenList){
+	var parentNode = null;
 	this.name = title;
 	this.parentNode = parent;
 	this.childrenNodes = childrenList;
-	this.addEventListener("click", makeCenterNode);
+	this.addEventListener("click", function makeCenterNode(){
+		var current = this;
+		new bottumUp = [current];
+		while(current.parentNode != null){
+			bottomUp[bottomUp.length] = current.parentNode;
+		}
+		var index;
+		for (index = bottumUp.length-1; index > 0; index--) {
+			bottumUp[index].parentNode = bottumUp[index-1];
+		}
+		this.parentNode = null;
+		draw graph;
+	});
 }
-function makeCenterNode(){
-	var p = n.getParentNode();
-	p.parentNode = n;
-	draw graph;
-}
+

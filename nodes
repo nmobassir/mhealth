@@ -1,8 +1,9 @@
-function node(title, parent, childrenList){
+function node(title, parent){
 	var parentNode = null;
+	//var children = new Array();
 	this.name = title;
 	this.parentNode = parent;
-	this.childrenNodes = childrenList;
+	//this.children = childrenList;
 	this.addEventListener("click", function makeCenterNode(){
 		var current = this;
 		new bottumUp = [current];
@@ -12,9 +13,14 @@ function node(title, parent, childrenList){
 		var index;
 		for (index = bottumUp.length-1; index > 0; index--) {
 			bottumUp[index].parentNode = bottumUp[index-1];
+			//bottumUp[index-1].children[children.length] = bottumUp[index];
+			//need to remove old children from array
 		}
 		this.parentNode = null;
-		draw graph;
+		//need to refresh graph after each click
 	});
-}
+};
+function draw(){
+	//is it possible to draw with only parent nodes?
+};
 
